@@ -72,8 +72,39 @@ The application is hosted locally using **Node.js** and **Express**, with **Mong
 - **HTML / CSS**
 - **Visual Studio Code**
 
-> ⚠️ Note: Mongoose and React were **not used**, as per course requirements.
+
 
 ---
 
 ## 📁 Project Structure
+project-root/
+│
+├── public/
+│ └── stylesheets/
+│ └── style.css
+│
+├── views/
+│ ├── index.ejs
+│ ├── login.ejs
+│ ├── registration.ejs
+│ ├── home.ejs
+│ ├── cities.ejs
+│ ├── islands.ejs
+│ ├── hiking.ejs
+│ ├── paris.ejs
+│ ├── bali.ejs
+│ ├── rome.ejs
+│ ├── santorini.ejs
+│ ├── inca.ejs
+│ ├── annapurna.ejs
+│ ├── wanttogo.ejs
+│ ├── searchresults.ejs
+│ └── error.ejs
+│
+├── routes/
+│ ├── index.js
+│ └── users.js
+│
+├── app.js
+├── package.json
+└── README.md
