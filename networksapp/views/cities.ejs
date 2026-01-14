@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body { background-color: #DBDBDB; }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cities</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body style="padding-top: 120px;">
+    <!-- Profile Section -->
+    <% if (currentUser) { %>
+    <div class="profile-section">
+        <div class="profile-icon"><%= currentUser.username.charAt(0).toUpperCase() %></div>
+        <div class="profile-info">
+            <p class="profile-name"><%= currentUser.username %></p>
+            <p class="profile-role">User (ID: <%= currentUser.username.length %>)</p>
+        </div>
+    </div>
+    <% } %>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="/home" class="nav-btn btn-home">RETURN TO HOME</a>
+        <a href="/logout" class="nav-btn btn-logout">LOGOUT</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand">Cities</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/wanttogo">Want-to-Go List</a>
+                </li>
+            </ul>
+            <form method="POST" action='/search' class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="Search" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="row justify-content-center g-4">
+            <div class="col-10 col-sm-6 col-md-5 col-lg-4">
+                <div class="card section-card text-center p-3 h-100">
+                    <img id="image" src="/images/paris.png" class="card-img-top mx-auto" style="width:170px; height:250px; object-fit:contain;">
+                    <div class="card-body">
+                        <h5 class="card-title">Paris</h5>
+                        <button onclick="location.href = '/paris';" class="btn btn-primary w-100">View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-5 col-lg-4">
+                <div class="card section-card text-center p-3 h-100">
+                    <img id="image" src="/images/rome.png" class="card-img-top mx-auto" style="width:170px; height:250px; object-fit:contain;">
+                    <div class="card-body">
+                        <h5 class="card-title">Rome</h5>
+                        <button onclick="location.href = '/rome';" class="btn btn-primary w-100">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
